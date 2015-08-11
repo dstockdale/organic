@@ -12,7 +12,10 @@
 Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
-  # config.track_inventory_levels = false
+  config.track_inventory_levels = false
+  config.max_level_in_taxons_menu = 4
+  config.products_per_page = 100
 end
 
-Spree.user_class = "Spree::User"
+SpreeVariantOptions::VariantConfig.allow_select_outofstock = true
+SpreeVariantOptions::VariantConfig.default_instock = true
