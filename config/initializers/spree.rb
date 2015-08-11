@@ -16,6 +16,3 @@ Spree.config do |config|
   config.max_level_in_taxons_menu = 4
   config.products_per_page = 100
 end
-
-SpreeVariantOptions::VariantConfig.allow_select_outofstock = true
-SpreeVariantOptions::VariantConfig.default_instock = true
