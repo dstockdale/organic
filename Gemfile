@@ -21,3 +21,4 @@ gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 
 gem 'spree_variant_options', github: 'AgilTec/spree_variant_options', branch: '3.0.0'
+gem 'spree_i18n', github: 'dstockdale/spree_i18n', branch: '3-0-stable'
