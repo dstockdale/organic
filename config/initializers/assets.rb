@@ -3,6 +3,6 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 
-Rails.application.config.assets.precompile += %w( logo/spree_50.png spree_header.jpg )
+Rails.application.config.assets.precompile += %w( logo/spree_50.png spree_header.jpg salvattore.js )
 
 Rails.application.config.assets.initialize_on_precompile = false

@@ -11,11 +11,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'aws-sdk', '< 2.0'
 
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
+  gem 'dotenv-rails'
 end
 
+gem 'deface', github: 'spree/deface'
 gem 'spree', '3.0.3'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
