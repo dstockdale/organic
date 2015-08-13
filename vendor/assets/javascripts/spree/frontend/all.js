@@ -11,3 +11,4 @@
 //= require_tree .
 //= require spree/frontend/spree_variant_options
 //= require spree/frontend/spree_i18n
+//= require spree/frontend/spree_multi_currency
