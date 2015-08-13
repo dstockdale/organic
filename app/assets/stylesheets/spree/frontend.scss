@@ -15,6 +15,10 @@ h1 {
   padding-left: 10px;
 }
 
+h1.taxon-title {
+  display: none;
+}
+
 .input-group-xs>.form-control,
 .input-group-xs>.input-group-addon,
 .input-group-xs>.input-group-btn>.btn {
