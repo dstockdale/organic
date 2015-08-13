@@ -1,0 +1,43 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <%= render partial: 'spree/shared/google_analytics.js' %>
+    <%= render partial: 'spree/shared/header' %>
+    <%= render partial: 'spree/shared/crumbs' %>
+    <div class="container">
+      <div class="row" data-hook>
+        <div id="content" class="col-sm-12" data-hook>
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
+        <%= yield :templates %>
+      </div>
+    </div>
+    <div class="footer-section">
+      <div class="container">
+        <footer id="footer" class="row" data-hook>
+          <div id="footer-left" class="col-md-6" data-hook></div>
+          <div id="footer-right" class="col-md-6" data-hook></div>
+        </footer>
+      </div>
+    </div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=149985251750582";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+  </body>
+</html>
