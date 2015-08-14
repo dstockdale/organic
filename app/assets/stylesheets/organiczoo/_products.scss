@@ -7,13 +7,29 @@
   }
 }
 
+[data-hook="product_left_part"] {
+  padding-left: 0 ! important;
+}
+
+#main-image .panel-body {
+  padding-left: 0;
+  padding-top: 0;
+}
+
 #inside-product-cart-form {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-#product-thumbnails .thumbnail {
-  border: none;
+#thumbnails .list-inline {
+  margin-left: -9px;
+  margin-top: 0;
+}
+
+#product-thumbnails {
+  .thumbnail {
+    border: none;
+  }
 }
 
 .product-description {
