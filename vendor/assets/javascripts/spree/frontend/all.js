@@ -15,3 +15,4 @@
 //= require spree/frontend/spree_reviews
 
 //= require organiczoo/app
+//= require spree/frontend/spree_paypal_express

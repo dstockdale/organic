@@ -5,4 +5,5 @@
  *
  *= require spree/frontend
  *= require spree/frontend/spree_reviews
+ *= require spree/frontend/spree_paypal_express
 */
