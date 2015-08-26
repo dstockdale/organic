@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818085432) do
+ActiveRecord::Schema.define(version: 20150824075019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,73 @@ ActiveRecord::Schema.define(version: 20150818085432) do
   add_index "spree_calculators", ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type", using: :btree
   add_index "spree_calculators", ["deleted_at"], name: "index_spree_calculators_on_deleted_at", using: :btree
   add_index "spree_calculators", ["id", "type"], name: "index_spree_calculators_on_id_and_type", using: :btree
+
+  create_table "spree_compose_assignments", force: :cascade do |t|
+    t.integer  "content_id"
+    t.string   "path"
+    t.string   "zone"
+    t.integer  "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "spree_compose_assignments", ["content_id", "path", "zone"], name: "assignments_on_content_id_and_path_and_zone", unique: true, using: :btree
+
+  create_table "spree_compose_content_translations", force: :cascade do |t|
+    t.integer  "spree_compose_content_id"
+    t.string   "locale"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+    t.string   "description"
+    t.string   "keywords"
+    t.string   "title"
+    t.text     "body"
+  end
+
+  add_index "spree_compose_content_translations", ["locale"], name: "index_spree_compose_content_translations_on_locale", using: :btree
+  add_index "spree_compose_content_translations", ["spree_compose_content_id"], name: "index_6308b064fa0548bcf0d01304ec5c48ab2baccf15", using: :btree
+
+  create_table "spree_compose_contents", force: :cascade do |t|
+    t.string   "slug"
+    t.boolean  "visible",      default: true
+    t.string   "content_type", default: "Page"
+    t.text     "description"
+    t.string   "keywords"
+    t.string   "title"
+    t.text     "body"
+    t.integer  "subject_id"
+    t.string   "template"
+    t.string   "ancestry"
+    t.integer  "position"
+    t.datetime "display_from"
+    t.datetime "display_till"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "spree_compose_contents", ["ancestry"], name: "index_spree_compose_contents_on_ancestry", using: :btree
+
+  create_table "spree_compose_menus", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spree_compose_nav_items", force: :cascade do |t|
+    t.string   "label"
+    t.string   "navable_type"
+    t.integer  "navable_id"
+    t.string   "url"
+    t.integer  "position"
+    t.string   "ancestry"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "menu_id"
+  end
+
+  add_index "spree_compose_nav_items", ["ancestry"], name: "index_spree_compose_nav_items_on_ancestry", using: :btree
+  add_index "spree_compose_nav_items", ["menu_id"], name: "index_spree_compose_nav_items_on_menu_id", using: :btree
 
   create_table "spree_countries", force: :cascade do |t|
     t.string   "iso_name"

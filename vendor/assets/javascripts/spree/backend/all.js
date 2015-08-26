@@ -14,3 +14,5 @@
 //= require spree/backend/spree_multi_currency
 //= require spree/backend/spree_reviews
 //= require spree/backend/spree_paypal_express
+//= require spree/backend/spree_compose
+//= require spree/backend/spree_summernote

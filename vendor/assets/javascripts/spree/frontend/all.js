@@ -16,3 +16,4 @@
 
 //= require organiczoo/spree_multi_currency_dropdown
 //= require organiczoo/app
+//= require spree/frontend/spree_compose
